@@ -8,7 +8,8 @@
         :root {
             --obsidian: #0A0A0A;
             --electric-blue: #00CCFF;
-            --blue-glow: rgba(0, 204, 255, 0.6);
+            --fire-blue: #0088FF;
+            --blue-glow: rgba(0, 204, 255, 0.8);
             --white: #F5F5F5;
             --gray: #121212;
         }
@@ -22,14 +23,14 @@
         body {
             background-color: var(--obsidian);
             color: var(--white);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
             overflow: hidden;
             height: 100vh;
             width: 100vw;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: radial-gradient(circle at center, #102030 0%, #0A0A0A 100%);
         }
 
         .container {
@@ -47,20 +48,38 @@
             text-align: center;
         }
 
+        /* Logo con efecto de fuego azul */
         .logo-placeholder {
-            width: 50px;
-            height: 50px;
+            width: 65px;
+            height: 65px;
             background: var(--obsidian);
             border-radius: 50%;
             margin: 0 auto 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--electric-blue);
-            box-shadow: 0 0 15px var(--blue-glow);
+            border: 2px solid var(--electric-blue);
+            box-shadow: 0 0 15px var(--blue-glow), inset 0 0 10px var(--blue-glow);
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--electric-blue);
+            position: relative;
+        }
+
+        .logo-placeholder::after {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 50%;
+            border: 1px solid var(--fire-blue);
+            filter: blur(4px);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 0.5; }
         }
 
         h1 {
@@ -68,7 +87,7 @@
             font-size: 1.6rem;
             text-transform: uppercase;
             font-weight: 900;
-            text-shadow: 0 0 8px var(--blue-glow);
+            text-shadow: 0 0 12px var(--blue-glow);
             line-height: 1;
             margin-bottom: 3px;
         }
@@ -78,21 +97,21 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--white);
-            font-weight: 400;
             opacity: 0.8;
             display: block;
-            border-top: 1px solid rgba(0, 204, 255, 0.2);
+            border-top: 1px solid rgba(0, 204, 255, 0.3);
             padding-top: 3px;
             max-width: 180px;
             margin: 0 auto;
         }
 
         .bunker-section {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #222;
-            border-radius: 12px;
+            background: rgba(10, 15, 25, 0.85);
+            border: 1px solid #005577;
+            border-radius: 15px;
             padding: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
 
         h2 {
@@ -116,30 +135,31 @@
             flex-direction: column;
             align-items: center;
             gap: 8px;
-            text-decoration: none;
             color: var(--white);
         }
 
-        .icon-halo {
-            width: 45px;
-            height: 45px;
+        /* Icono Estilo Fuego Azul */
+        .icon-fire {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background: var(--gray);
-            border: 1px solid var(--electric-blue);
+            background: radial-gradient(circle, #001122 0%, #000 100%);
+            border: 2px solid var(--electric-blue);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
-            box-shadow: 0 0 10px var(--blue-glow);
+            font-size: 20px;
+            color: var(--white);
+            box-shadow: 0 0 10px var(--blue-glow), inset 0 0 8px var(--blue-glow);
+            position: relative;
+            text-shadow: 0 0 5px var(--electric-blue);
         }
 
         .service-card span {
             font-size: 0.6rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
             color: var(--electric-blue);
-            text-align: center;
         }
 
         .links-grid {
@@ -147,28 +167,37 @@
             justify-content: center;
             gap: 12px;
             flex-wrap: wrap;
-            max-width: 240px; /* Forzamos el salto para tener filas de 4-5 iconos */
+            max-width: 250px;
             margin: 10px auto 0;
         }
 
-        .btn-icon {
-            width: 36px;
-            height: 36px;
+        /* Botones de Redes Sociales con efecto Glow de fuego */
+        .btn-fire {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            border: 1px solid var(--electric-blue);
+            background: #000;
+            border: 2px solid var(--electric-blue);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--electric-blue);
-            font-size: 14px;
+            color: var(--white);
+            font-size: 16px;
             text-decoration: none;
-            box-shadow: 0 0 8px var(--blue-glow);
+            box-shadow: 0 0 12px var(--blue-glow);
+            transition: 0.3s;
+        }
+
+        .btn-fire:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 20px var(--electric-blue);
+            border-color: #fff;
         }
 
         footer {
             text-align: center;
             font-size: 0.5rem;
-            color: #444;
+            color: #557799;
             letter-spacing: 2px;
         }
     </style>
@@ -186,34 +215,34 @@
             <h2>SERVICIOS</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="icon-halo"><i class="fas fa-palette"></i></div>
+                    <div class="icon-fire"><i class="fas fa-palette"></i></div>
                     <span>Diseño</span>
                 </div>
                 <div class="service-card">
-                    <div class="icon-halo"><i class="fas fa-microchip"></i></div>
+                    <div class="icon-fire"><i class="fas fa-microchip"></i></div>
                     <span>Ingeniería</span>
                 </div>
                 <div class="service-card">
-                    <div class="icon-halo"><i class="fas fa-music"></i></div>
+                    <div class="icon-fire"><i class="fas fa-music"></i></div>
                     <span>Música</span>
                 </div>
                 <div class="service-card">
-                    <div class="icon-halo"><i class="fas fa-utensils"></i></div>
+                    <div class="icon-fire"><i class="fas fa-utensils"></i></div>
                     <span>Chef</span>
                 </div>
             </div>
         </section>
 
         <div class="links-grid">
-            <a href="https://wa.me/584249039517" class="btn-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/AriaBunkerBot" class="btn-icon" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://smp11.simplex.im/a#0RIfKM-mhcpfgeMOt_4iXyiHwcWrHalT4ncWknDEVD0" class="btn-icon" title="SimpleX Chat"><i class="fas fa-shield-halved"></i></a>
-            <a href="#" class="btn-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@agentecelestial" class="btn-icon" title="TikTok Principal"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/benelohimyohanan" class="btn-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="btn-icon" title="Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://www.tiktok.com/@ChefTikTok7" class="btn-icon" title="TikTok Chef"><i class="fas fa-utensils" style="font-size: 10px;"></i></a>
-            <a href="https://www.tiktok.com/@th3_rap_dj" class="btn-icon" title="TikTok DJ"><i class="fas fa-compact-disc" style="font-size: 10px;"></i></a>
+            <a href="https://wa.me/584249039517" class="btn-fire" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://t.me/AriaBunkerBot" class="btn-fire" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://smp11.simplex.im/a#0RIfKM-mhcpfgeMOt_4iXyiHwcWrHalT4ncWknDEVD0" class="btn-fire" title="SimpleX Chat"><i class="fas fa-shield-halved"></i></a>
+            <a href="#" class="btn-fire" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@agentecelestial" class="btn-fire" title="TikTok Principal"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/benelohimyohanan" class="btn-fire" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn-fire" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://www.tiktok.com/@ChefTikTok7" class="btn-fire" title="TikTok Chef"><i class="fas fa-utensils" style="font-size: 10px;"></i></a>
+            <a href="https://www.tiktok.com/@th3_rap_dj" class="btn-fire" title="TikTok DJ"><i class="fas fa-compact-disc" style="font-size: 10px;"></i></a>
         </div>
 
         <footer>
