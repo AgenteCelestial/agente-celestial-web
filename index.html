@@ -194,6 +194,13 @@
             gap: 2px;
         }
 
+        .monitor-card.full-width {
+            grid-column: span 4;
+            margin-top: 5px;
+            border-top: 1px solid rgba(0, 204, 255, 0.1);
+            padding-top: 8px;
+        }
+
         .monitor-value {
             font-size: 0.45rem;
             font-weight: 900;
@@ -326,6 +333,11 @@
                     <div class="monitor-value" id="val-cesta">--</div>
                     <div class="monitor-label">Cesta</div>
                 </div>
+                <div class="monitor-card full-width">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-gift"></i></div>
+                    <div class="monitor-value" id="val-bono">--</div>
+                    <div class="monitor-label">Bono Único (Guerra Econ.)</div>
+                </div>
             </div>
         </section>
 
@@ -355,6 +367,7 @@
                     document.getElementById('val-inflacion').innerText = '1.8%';
                     document.getElementById('val-salario').innerText = '130.00';
                     document.getElementById('val-cesta').innerText = '580.40';
+                    document.getElementById('val-bono').innerText = 'Bs. 36.000 (≈ $90.00)';
                     
                 } catch (e) {
                     console.error("Error actualizando monitores:", e);
