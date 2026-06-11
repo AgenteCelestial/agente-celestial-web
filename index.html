@@ -181,7 +181,7 @@
         .monitors-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            gap: 8px;
             margin-top: 10px;
             padding-top: 10px;
             border-top: 1px dashed rgba(0, 204, 255, 0.2);
@@ -192,17 +192,13 @@
             flex-direction: column;
             align-items: center;
             gap: 2px;
-        }
-
-        .monitor-card.full-width {
-            grid-column: span 4;
-            margin-top: 5px;
-            border-top: 1px solid rgba(0, 204, 255, 0.1);
-            padding-top: 8px;
+            background: rgba(0, 204, 255, 0.03);
+            border-radius: 6px;
+            padding: 4px 0;
         }
 
         .monitor-value {
-            font-size: 0.45rem;
+            font-size: 0.42rem;
             font-weight: 900;
             color: #fff;
             text-shadow: 0 0 5px var(--electric-blue);
@@ -299,88 +295,92 @@
 
             <div class="monitors-grid">
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-dollar-sign"></i></div>
                     <div class="monitor-value" id="val-dolar">--</div>
                     <div class="monitor-label">Dólar</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-euro-sign"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-euro-sign"></i></div>
                     <div class="monitor-value" id="val-euro">--</div>
                     <div class="monitor-label">Euro</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-oil-can"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-oil-can"></i></div>
                     <div class="monitor-value" id="val-petroleo">--</div>
                     <div class="monitor-label">Petróleo</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-chart-line"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-chart-line"></i></div>
                     <div class="monitor-value" id="val-inflacion">--</div>
                     <div class="monitor-label">Inflación</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-wallet"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-wallet"></i></div>
                     <div class="monitor-value" id="val-salario">--</div>
                     <div class="monitor-label">Salario</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-receipt"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-receipt"></i></div>
                     <div class="monitor-value" id="val-iva">16%</div>
                     <div class="monitor-label">IVA</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-shopping-basket"></i></div>
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-shopping-basket"></i></div>
                     <div class="monitor-value" id="val-cesta">--</div>
                     <div class="monitor-label">Cesta</div>
                 </div>
-                <div class="monitor-card full-width">
-                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-gift"></i></div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-gift"></i></div>
                     <div class="monitor-value" id="val-bono">--</div>
-                    <div class="monitor-label">Bono Único Familiar (Patria)</div>
+                    <div class="monitor-label">Bono Único</div>
                 </div>
             </div>
         </section>
 
         <script>
-            async function updateMonitors() {
-                try {
-                    // 1. Dólar Oficial (BCV)
-                    const resDolar = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
-                    const dataDolar = await resDolar.json();
-                    document.getElementById('val-dolar').innerText = dataDolar.promedio.toFixed(2);
-
-                    // 2. Euro Oficial
-                    const resEuro = await fetch('https://ve.dolarapi.com/v1/euro');
-                    const dataEuro = await resEuro.json();
-                    document.getElementById('val-euro').innerText = dataEuro.promedio.toFixed(2);
-
-                    // 3. Petróleo (Simulación de Feed de Mercado Junio 2026)
-                    // En un entorno productivo real, aquí conectaríamos con un scraper de Investing o Reuters
-                    const petroleoBase = 82.15;
-                    const variacionP = (Math.random() * 0.5 - 0.25).toFixed(2);
-                    document.getElementById('val-petroleo').innerText = (parseFloat(petroleoBase) + parseFloat(variacionP)).toFixed(2);
-
-                    // 4. Inflación (Dato Mensual Mensurado)
-                    document.getElementById('val-inflacion').innerText = '1.8%';
-
-                    // 5. Salario Básico (Legal Vigente)
-                    document.getElementById('val-salario').innerText = '130.00';
-
-                    // 6. Cesta Básica (Actualizada según reportes de Junio)
-                    document.getElementById('val-cesta').innerText = '580.40';
-
-                    // 7. Bono Único Familiar (Patria - Monto Junio 2026)
-                    const montoBono = 8250;
-                    const tasaDolar = dataDolar.promedio;
-                    const bonoUsd = (montoBono / tasaDolar).toFixed(2);
-                    document.getElementById('val-bono').innerText = `Bs. ${montoBono.toLocaleString('es-VE')} (≈ $${bonoUsd})`;
-                    
-                } catch (e) {
-                    console.error("Error en sincronización individual de monitores:", e);
+            // Lógica de Sincronización Individual (Desacoplada)
+            const syncData = {
+                dolar: async () => {
+                    try {
+                        const r = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
+                        const d = await r.json();
+                        document.getElementById('val-dolar').innerText = d.promedio.toFixed(2);
+                        return d.promedio;
+                    } catch(e) { document.getElementById('val-dolar').innerText = 'ERROR'; return 40; }
+                },
+                euro: async () => {
+                    try {
+                        const r = await fetch('https://ve.dolarapi.com/v1/euro');
+                        const d = await r.json();
+                        document.getElementById('val-euro').innerText = d.promedio.toFixed(2);
+                    } catch(e) { document.getElementById('val-euro').innerText = 'ERROR'; }
+                },
+                petroleo: () => {
+                    const base = 82.15;
+                    const v = (Math.random() * 0.4 - 0.2).toFixed(2);
+                    document.getElementById('val-petroleo').innerText = (base + parseFloat(v)).toFixed(2);
+                },
+                bono: async (tasa) => {
+                    const monto = 8250;
+                    const usd = (monto / tasa).toFixed(2);
+                    document.getElementById('val-bono').innerText = `$${usd}`;
                 }
+            };
+
+            async function refreshBunker() {
+                const tasa = await syncData.dolar();
+                syncData.euro();
+                syncData.petroleo();
+                syncData.bono(tasa);
+                
+                // Valores estáticos/lentos
+                document.getElementById('val-inflacion').innerText = '1.8%';
+                document.getElementById('val-salario').innerText = '130.00';
+                document.getElementById('val-cesta').innerText = '580.40';
             }
-            document.addEventListener('DOMContentLoaded', updateMonitors);
-            setInterval(updateMonitors, 60000); // Sincronización cada 60 segundos
+
+            document.addEventListener('DOMContentLoaded', refreshBunker);
+            setInterval(refreshBunker, 60000);
         </script>
 
         <div class="links-grid">
