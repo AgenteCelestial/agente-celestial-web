@@ -118,11 +118,11 @@
 
         /* Franja de Exclusividad Ajustada */
         .exclusive-banner {
-            width: 100%;
-            height: calc(180px - 2cm); /* Altura original menos 2cm */
-            margin: 8px 0;
-            border-top: 1px solid rgba(0, 204, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 204, 255, 0.2);
+            width: calc(100% - 2cm); /* Quita 1cm de cada lado */
+            height: calc(180px - 2cm); 
+            margin: 8px auto; /* Centrado horizontal */
+            border: 1px solid rgba(0, 204, 255, 0.2);
+            border-radius: 8px; /* Bordes suaves para que no parezca cortada */
             overflow: hidden;
             position: relative;
             background: #000;
