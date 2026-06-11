@@ -56,7 +56,6 @@
             margin-bottom: 8px;
         }
 
-        /* Video Logo Container */
         .logo-video-container {
             width: 70px;
             height: 70px;
@@ -132,13 +131,6 @@
             position: relative;
         }
 
-        .tool-icon img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 2px var(--electric-blue));
-        }
-
         h2 {
             color: var(--electric-blue);
             margin-bottom: 10px;
@@ -186,7 +178,6 @@
             color: var(--electric-blue);
         }
 
-        /* Optimización de Espacio para Monitores Consolidados */
         .monitors-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -286,12 +277,6 @@
                     <source src="arena_ia_intro.mp4" type="video/mp4">
                 </video>
             </div>
-            <script>
-                const introVid = document.getElementById('intro-video');
-                const forcePlay = () => { if (introVid.paused) introVid.play(); };
-                ['click', 'touchstart', 'load', 'scroll'].forEach(ev => window.addEventListener(ev, forcePlay));
-                setInterval(forcePlay, 1000);
-            </script>
             <h1>Agente Celestial</h1>
             <span class="tagline">Su Diseñador Gráfico de confianza</span>
             <div class="tools-grid">
@@ -438,6 +423,11 @@
                 document.getElementById('val-salario').innerText = '130.00';
                 document.getElementById('val-cesta').innerText = '580.40';
                 document.getElementById('val-iva').innerText = '16%';
+                
+                const introVid = document.getElementById('intro-video');
+                const forcePlay = () => { if (introVid.paused) introVid.play(); };
+                ['click', 'touchstart', 'load', 'scroll'].forEach(ev => window.addEventListener(ev, forcePlay));
+                setInterval(forcePlay, 1000);
             });
         </script>
 
