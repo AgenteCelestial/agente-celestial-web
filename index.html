@@ -116,6 +116,26 @@
             margin: 2px 0 4px;
         }
 
+        /* Franja de Exclusividad Ajustada */
+        .exclusive-banner {
+            width: 100%;
+            height: calc(180px - 2cm); /* Altura original menos 2cm */
+            margin: 8px 0;
+            border-top: 1px solid rgba(0, 204, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 204, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .exclusive-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 1;
+            filter: brightness(1.1);
+        }
+
         .tool-icon {
             width: 28px;
             height: 28px;
@@ -339,6 +359,10 @@
                 <div class="tool-icon" title="Arena IA"><i class="fas fa-bolt"></i></div>
             </div>
         </header>
+
+        <div class="exclusive-banner">
+            <img src="https://i.ibb.co/Y40x89pJ/Gemini-Generated-Image-4f4z864f4z864f4z.jpg" alt="Exclusividad">
+        </div>
 
         <section class="bunker-section">
             <h2>SERVICIOS</h2>
