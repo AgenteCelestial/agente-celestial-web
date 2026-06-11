@@ -63,10 +63,6 @@
             color: var(--electric-blue);
         }
 
-        .brand-container {
-            margin-bottom: 5px;
-        }
-
         h1 {
             color: var(--electric-blue);
             font-size: 1.6rem;
@@ -149,32 +145,24 @@
         .links-grid {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 5px;
+            gap: 12px;
             flex-wrap: wrap;
-            max-width: 360px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 240px; /* Forzamos el salto para tener filas de 4-5 iconos */
+            margin: 10px auto 0;
         }
 
         .btn-icon {
-            width: 34px;
-            height: 34px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             border: 1px solid var(--electric-blue);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--electric-blue);
-            font-size: 12px;
+            font-size: 14px;
             text-decoration: none;
             box-shadow: 0 0 8px var(--blue-glow);
-            transition: 0.2s;
-        }
-
-        .btn-icon:hover {
-            box-shadow: 0 0 15px var(--electric-blue);
-            transform: translateY(-2px);
         }
 
         footer {
@@ -190,10 +178,8 @@
     <div class="container">
         <header>
             <div class="logo-placeholder">AC</div>
-            <div class="brand-container">
-                <h1>Agente Celestial</h1>
-                <span class="tagline">Su Diseñador Gráfico de confianza</span>
-            </div>
+            <h1>Agente Celestial</h1>
+            <span class="tagline">Su Diseñador Gráfico de confianza</span>
         </header>
 
         <section class="bunker-section">
@@ -226,8 +212,8 @@
             <a href="https://www.tiktok.com/@agentecelestial" class="btn-icon" title="TikTok Principal"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.facebook.com/benelohimyohanan" class="btn-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="btn-icon" title="Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://www.tiktok.com/@ChefTikTok7" class="btn-icon" title="TikTok Chef"><i class="fas fa-utensils" style="font-size: 8px;"></i></a>
-            <a href="https://www.tiktok.com/@th3_rap_dj" class="btn-icon" title="TikTok DJ"><i class="fas fa-compact-disc" style="font-size: 8px;"></i></a>
+            <a href="https://www.tiktok.com/@ChefTikTok7" class="btn-icon" title="TikTok Chef"><i class="fas fa-utensils" style="font-size: 10px;"></i></a>
+            <a href="https://www.tiktok.com/@th3_rap_dj" class="btn-icon" title="TikTok DJ"><i class="fas fa-compact-disc" style="font-size: 10px;"></i></a>
         </div>
 
         <footer>
