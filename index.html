@@ -48,8 +48,8 @@
         }
 
         .logo-placeholder {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--obsidian);
             border-radius: 50%;
             margin: 0 auto 10px;
@@ -59,8 +59,12 @@
             border: 2px solid var(--electric-blue);
             box-shadow: 0 0 20px var(--blue-glow);
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--electric-blue);
+        }
+
+        .brand-container {
+            margin-bottom: 5px;
         }
 
         h1 {
@@ -69,6 +73,22 @@
             text-transform: uppercase;
             font-weight: 900;
             text-shadow: 0 0 10px var(--blue-glow);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--white);
+            font-weight: 400;
+            opacity: 0.9;
+            display: block;
+            border-top: 1px solid rgba(0, 204, 255, 0.3);
+            padding-top: 5px;
+            max-width: 250px;
+            margin: 0 auto;
         }
 
         .bunker-section {
@@ -82,7 +102,7 @@
         h2 {
             color: var(--electric-blue);
             margin-bottom: 20px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-align: center;
             text-transform: uppercase;
             font-weight: 800;
@@ -154,6 +174,13 @@
             color: #444;
             letter-spacing: 2px;
         }
+
+        @media (max-height: 600px) {
+            h1 { font-size: 1.8rem; }
+            .tagline { font-size: 0.7rem; }
+            .icon-halo { width: 50px; height: 50px; font-size: 20px; }
+            .bunker-section { padding: 15px; }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -161,7 +188,10 @@
     <div class="container">
         <header>
             <div class="logo-placeholder">AC</div>
-            <h1>Agente Celestial</h1>
+            <div class="brand-container">
+                <h1>Agente Celestial</h1>
+                <span class="tagline">Su Diseñador Gráfico de confianza</span>
+            </div>
         </header>
 
         <section class="bunker-section">
