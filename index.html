@@ -263,18 +263,20 @@
 
         footer {
             text-align: center;
-            font-size: 0.65rem; /* Aumentado de 0.42rem para mayor legibilidad */
-            color: var(--electric-blue); /* Cambiado de azul grisáceo a azul eléctrico brillante */
+            font-size: 0.65rem;
+            color: var(--electric-blue);
             letter-spacing: 0.8px;
             font-family: 'Inter', sans-serif;
-            font-weight: 800; /* Negrita para resaltar */
-            text-shadow: 0 0 5px var(--blue-glow); /* Añadido brillo para visibilidad */
+            font-weight: 800;
+            text-shadow: 0 0 5px var(--blue-glow);
             opacity: 1;
-            margin-top: 5px;
+            margin-top: -65px; /* Elevación agresiva de 7cm aprox (65px-70px) */
             border-top: 1px solid var(--electric-blue);
             padding: 4px 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Fondo sutil para contrastar con el fondo dinámico */
+            background: rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 100;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
