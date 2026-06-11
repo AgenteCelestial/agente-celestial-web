@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente Celestial — Búnker de Diseño & Ingeniería</title>
+    <meta name="description" content="Soberanía en Diseño Gráfico, Ingeniería de Flyers y Producción de Activos 8K.">
+    
+    <!-- Open Graph / Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agente Celestial — Búnker de Diseño">
+    <meta property="og:description" content="Diseño gráfico estático, flyers de alto impacto y producción musical con IA.">
+    <meta property="og:image" content="__ZAPIA_SITE_ORIGIN__/_z/og.png">
+    
+    <!-- PWA / Mobile -->
+    <link rel="manifest" href="__ZAPIA_SITE_URL__/manifest.webmanifest">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AgenteCelestial">
+    
+    <style>
+        :root {
+            --obsidian: #0A0A0A;
+            --gold: #D4AF37;
+            --gold-bright: #FFD700;
+            --white: #F5F5F5;
+            --gray: #1A1A1A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: var(--white);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.2;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--gray));
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--obsidian);
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+            line-height: 0.9;
+            font-weight: 900;
+        }
+
+        p.subtitle {
+            color: var(--gold-bright);
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .bunker-section {
+            background: var(--gray);
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            flex-shrink: 1;
+        }
+
+        h2 {
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 3px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .service-card {
+            padding: 12px 5px;
+            border: 1px solid #222;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card strong {
+            color: var(--gold-bright);
+            display: block;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .links-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 2px;
+            justify-content: center;
+        }
+
+        .btn {
+            flex: 1 1 45%;
+            display: block;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 12px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--obsidian);
+        }
+
+        .btn-wa {
+            background: #25D366;
+            border-color: #25D366;
+            color: white;
+        }
+
+        .btn-wa:hover {
+            background: #128C7E;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #555;
+            padding: 3px 0;
+        }
+
+        @media (max-height: 700px) {
+            .logo-placeholder { width: 45px; height: 45px; font-size: 1rem; }
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.1rem; }
+            .bunker-section { padding: 8px; margin-bottom: 5px; }
+            .service-card strong { font-size: 0.85rem; }
+            .service-card { font-size: 0.7rem; }
+            .btn { font-size: 0.78rem; padding: 9px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-placeholder">AC</div>
+            <h1>Agente Celestial</h1>
+            <p class="subtitle">Soberanía en Diseño & Ingeniería Visual</p>
+        </header>
+
+        <section class="bunker-section">
+            <h2>SERVICIOS DEL BÚNKER</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <strong>DISEÑO GRÁFICO</strong>
+                </div>
+                <div class="service-card">
+                    <strong>INGENIERÍA VISUAL</strong>
+                </div>
+                <div class="service-card">
+                    <strong>PRODUCCIÓN MUSICAL</strong>
+                </div>
+                <div class="service-card">
+                    <strong>CHEF PRIVADO</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="bunker-section">
+            <h2>COMANDOS DE ACCESO</h2>
+            <div class="links-grid">
+                <a href="https://wa.me/584249039517" class="btn btn-wa">CONTACTO VÍA WHATSAPP</a>
+                <a href="https://www.tiktok.com/@agentecelestial" class="btn">TIKTOK PRINCIPAL</a>
+                <a href="https://www.facebook.com/benelohimyohanan" class="btn">FACEBOOK OFICIAL</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 AGENTE CELESTIAL | OPERACIÓN SINGULARIDAD
+        </footer>
+    </div>
+
+</body>
+</html>
