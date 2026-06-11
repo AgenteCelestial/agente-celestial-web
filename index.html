@@ -42,7 +42,7 @@
             max-width: 400px;
             height: 100vh;
             margin: 0 auto;
-            padding: 4px;
+            padding: 10px 5px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -58,13 +58,13 @@
 
         /* Video Logo Container */
         .logo-video-container {
-            width: 55px;
-            height: 55px;
+            width: 70px;
+            height: 70px;
             margin: 0 auto 2px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid var(--electric-blue);
-            box-shadow: 0 0 10px var(--blue-glow);
+            box-shadow: 0 0 15px var(--blue-glow);
             background: #000;
             position: relative;
         }
@@ -77,57 +77,57 @@
 
         h1 {
             color: var(--electric-blue);
-            font-size: 1.1rem;
+            font-size: 1.6rem;
             text-transform: uppercase;
             font-weight: 900;
-            text-shadow: 0 0 10px var(--blue-glow);
+            text-shadow: 0 0 12px var(--blue-glow);
             line-height: 1;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
         }
 
         .tagline {
-            font-size: 0.45rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             color: var(--white);
             opacity: 0.8;
             display: block;
             border-top: 1px solid rgba(0, 204, 255, 0.3);
-            padding-top: 2px;
-            max-width: 150px;
+            padding-top: 3px;
+            max-width: 180px;
             margin: 0 auto;
         }
 
         .bunker-section {
             background: rgba(10, 15, 25, 0.7);
             border: 1px solid rgba(0, 204, 255, 0.3);
-            border-radius: 10px;
-            padding: 6px;
-            box-shadow: 0 0 10px rgba(0, 204, 255, 0.1);
+            border-radius: 12px;
+            padding: 8px;
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.1);
             backdrop-filter: blur(8px);
-            margin: 0 auto 4px;
-            width: 98%;
+            margin: 0 auto 5px;
+            width: 95%;
             max-width: 350px;
         }
 
         .tools-grid {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin: 18px 0 5px; /* Separación solicitada por el Comandante */
+            gap: 10px;
+            margin: 2px 0 4px;
         }
 
         .tool-icon {
-            width: 22px;
-            height: 22px;
-            border-radius: 5px;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
             background: #000;
             border: 1px solid var(--electric-blue);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 5px var(--blue-glow);
-            font-size: 10px;
+            box-shadow: 0 0 6px var(--blue-glow);
+            font-size: 12px;
             color: var(--white);
             position: relative;
         }
@@ -141,46 +141,46 @@
 
         h2 {
             color: var(--electric-blue);
-            margin-bottom: 4px;
-            font-size: 0.6rem;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
             text-align: center;
             text-transform: uppercase;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
+            gap: 10px;
         }
 
         .service-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px;
+            gap: 4px;
             color: var(--white);
         }
 
         .icon-fire {
-            width: 26px;
-            height: 26px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: radial-gradient(circle, #001122 0%, #000 100%);
-            border: 1px solid var(--electric-blue);
+            border: 1.5px solid var(--electric-blue);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
+            font-size: 16px;
             color: var(--white);
-            box-shadow: 0 0 6px var(--blue-glow), inset 0 0 3px var(--blue-glow);
+            box-shadow: 0 0 8px var(--blue-glow), inset 0 0 5px var(--blue-glow);
             position: relative;
-            text-shadow: 0 0 3px var(--electric-blue);
+            text-shadow: 0 0 5px var(--electric-blue);
         }
 
         .service-card span {
-            font-size: 0.42rem;
+            font-size: 0.5rem;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--electric-blue);
@@ -190,10 +190,10 @@
         .monitors-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 4px; /* Espacio mínimo para juntar los monitores */
+            gap: 4px;
             margin-top: 8px;
             padding: 8px;
-            background: rgba(0, 204, 255, 0.05); /* Fondo sutil para agrupar visualmente */
+            background: rgba(0, 204, 255, 0.05);
             border: 1px solid rgba(0, 204, 255, 0.15);
             border-radius: 8px;
         }
@@ -229,22 +229,17 @@
         .links-grid {
             display: flex;
             justify-content: center;
-            gap: 4px;
+            gap: 5px;
             flex-wrap: nowrap;
             width: 100%;
             max-width: 380px;
-            margin: 0 auto;
-            position: absolute;
-            bottom: 18px; /* Justo encima del footer fijo */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1001;
-            overflow: hidden;
+            margin: 5px auto 0;
+            overflow-x: hidden;
         }
 
         .btn-fire {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid var(--electric-blue);
@@ -252,9 +247,9 @@
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 10px;
+            font-size: 11px;
             text-decoration: none;
-            box-shadow: 0 0 6px var(--blue-glow);
+            box-shadow: 0 0 8px var(--blue-glow);
             transition: 0.3s;
             backdrop-filter: blur(4px);
             flex-shrink: 0;
@@ -276,27 +271,9 @@
             text-shadow: 0 0 5px var(--blue-glow);
             padding: 2px 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            bottom: 2px;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .links-grid {
-            display: flex;
-            justify-content: center;
-            gap: 4px;
-            flex-wrap: nowrap;
-            width: 100%;
-            max-width: 380px;
-            margin: 0 auto;
-            position: absolute;
-            bottom: 18px; /* Justo encima del footer fijo */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1001;
-            overflow: hidden;
+            opacity: 1;
+            margin-top: 3px;
+            border-top: 1px solid rgba(0, 204, 255, 0.1);
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -310,11 +287,10 @@
                 </video>
             </div>
             <script>
-                // Protocolo de Reproducción Perpetua
                 const introVid = document.getElementById('intro-video');
                 const forcePlay = () => { if (introVid.paused) introVid.play(); };
                 ['click', 'touchstart', 'load', 'scroll'].forEach(ev => window.addEventListener(ev, forcePlay));
-                setInterval(forcePlay, 1000); // Monitoreo de estado cada segundo
+                setInterval(forcePlay, 1000);
             </script>
             <h1>Agente Celestial</h1>
             <span class="tagline">Su Diseñador Gráfico de confianza</span>
@@ -392,39 +368,13 @@
         </section>
 
         <script>
-            // Motor de Sincronización Perpetua (Cada monitor es autónomo y persistente)
             const BunkerData = {
-                // Monitor Dólar - Triple redundancia
                 syncDolar: async function() {
                     const el = document.getElementById('val-dolar');
                     const sources = [
                         'https://ve.dolarapi.com/v1/dolares/oficial',
-                        'https://pydolarve.org/api/v1/dollar?page=bcv' // Backup alternativo real
+                        'https://pydolarve.org/api/v1/dollar?page=bcv'
                     ];
-                    
-                    for (let url of sources) {
-                        try {
-                            const r = await fetch(url);
-                            const d = await r.json();
-                            let price = d.promedio || d.monto || (d.monitors && d.monitors.bcv && d.monitors.bcv.price);
-                            if (price) {
-                                el.innerText = parseFloat(price).toFixed(2);
-                                el.style.color = "#fff";
-                                return; // Éxito, salir del loop
-                            }
-                        } catch(e) { console.warn(`Source ${url} failed`); }
-                    }
-                    setTimeout(() => this.syncDolar(), 30000);
-                },
-
-                // Monitor Euro - Triple redundancia
-                syncEuro: async function() {
-                    const el = document.getElementById('val-euro');
-                    const sources = [
-                        'https://ve.dolarapi.com/v1/euro',
-                        'https://pydolarve.org/api/v1/euro?page=bcv'
-                    ];
-
                     for (let url of sources) {
                         try {
                             const r = await fetch(url);
@@ -435,40 +385,55 @@
                                 el.style.color = "#fff";
                                 return;
                             }
-                        } catch(e) { console.warn(`Source ${url} failed`); }
+                        } catch(e) {}
+                    }
+                    setTimeout(() => this.syncDolar(), 30000);
+                },
+                syncEuro: async function() {
+                    const el = document.getElementById('val-euro');
+                    const sources = [
+                        'https://ve.dolarapi.com/v1/euro',
+                        'https://pydolarve.org/api/v1/euro?page=bcv'
+                    ];
+                    for (let url of sources) {
+                        try {
+                            const r = await fetch(url);
+                            const d = await r.json();
+                            let price = d.promedio || d.monto || (d.monitors && d.monitors.bcv && d.monitors.bcv.price);
+                            if (price) {
+                                el.innerText = parseFloat(price).toFixed(2);
+                                el.style.color = "#fff";
+                                return;
+                            }
+                        } catch(e) {}
                     }
                     setTimeout(() => this.syncEuro(), 35000);
                 },
-                // Simulación de Mercado en Vivo (Petróleo)
                 syncOil: function() {
                     const base = 82.15;
                     const v = (Math.random() * 0.2 - 0.1).toFixed(2);
                     document.getElementById('val-petroleo').innerText = (base + parseFloat(v)).toFixed(2);
                     setTimeout(() => this.syncOil(), 15000);
                 },
-                // Cálculo de Bono en Tiempo Real basado en Tasa Actual
                 updateBono: async function() {
                     try {
                         const r = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
                         const d = await r.json();
-                        const tasa = d.promedio || d.monto || 45; // Tasa segura fallback
+                        const tasa = d.promedio || d.monto || 45;
                         const usd = (8250 / tasa).toFixed(2);
                         document.getElementById('val-bono').innerText = `$${usd}`;
                     } catch(e) {
-                        document.getElementById('val-bono').innerText = '$14.75'; // Valor estático seguro
+                        document.getElementById('val-bono').innerText = '$14.75';
                     }
                     finally { setTimeout(() => this.updateBono(), 60000); }
                 }
             };
 
-            // Inicialización de la Consola de Datos
             document.addEventListener('DOMContentLoaded', () => {
                 BunkerData.syncDolar();
                 BunkerData.syncEuro();
                 BunkerData.syncOil();
                 BunkerData.updateBono();
-                
-                // Datos de Referencia Fijos/Mensuales
                 document.getElementById('val-inflacion').innerText = '1.8%';
                 document.getElementById('val-salario').innerText = '130.00';
                 document.getElementById('val-cesta').innerText = '580.40';
@@ -482,10 +447,10 @@
             <a href="https://smp11.simplex.im/a#0RIfKM-mhcpfgeMOt_4iXyiHwcWrHalT4ncWknDEVD0" class="btn-fire" title="SimpleX Chat"><i class="fas fa-user-shield"></i></a>
             <a href="#" class="btn-fire" title="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@agentecelestial" class="btn-fire" title="TikTok Principal"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/benelohimyohanan" class="btn-fire" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/benelohimyohanan" class="btn-fire" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="btn-fire" title="Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://www.tiktok.com/@ChefTikTok7" class="btn-fire" title="TikTok Chef"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.tiktok.com/@th3_rap_dj" class="btn-fire" title="TikTok DJ"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.tiktok.com/@ChefTikTok7" class="btn-fire" title="TikTok Chef"><i class="fas fa-utensils" style="font-size: 10px;"></i></a>
+            <a href="https://www.tiktok.com/@th3_rap_dj" class="btn-fire" title="TikTok DJ"><i class="fas fa-compact-disc" style="font-size: 10px;"></i></a>
         </div>
 
         <footer>
