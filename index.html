@@ -233,10 +233,13 @@
             flex-wrap: nowrap;
             width: 100%;
             max-width: 380px;
-            margin: 5px auto 0; /* Volvemos a posición normal para que footer quede debajo */
-            overflow-x: hidden;
-            position: relative;
-            z-index: 101;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 18px; /* Justo encima del footer fijo */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            overflow: hidden;
         }
 
         .btn-fire {
@@ -265,19 +268,35 @@
 
         footer {
             text-align: center;
-            font-size: 0.55rem;
+            font-size: 0.52rem;
             color: var(--electric-blue);
-            letter-spacing: 0.8px;
+            letter-spacing: 0.5px;
             font-family: 'Inter', sans-serif;
             font-weight: 800;
             text-shadow: 0 0 5px var(--blue-glow);
-            opacity: 1;
-            margin-top: 5px; /* Bajamos el texto para que esté debajo de las redes */
-            padding: 4px 0;
+            padding: 2px 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 100;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            flex-wrap: nowrap;
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 18px; /* Justo encima del footer fijo */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001;
+            overflow: hidden;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
