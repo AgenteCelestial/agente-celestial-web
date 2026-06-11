@@ -233,7 +233,7 @@
             flex-wrap: nowrap;
             width: 100%;
             max-width: 380px;
-            margin: -60px auto 10px; /* Subida aproximada de 6.5cm para alinearse cerca de la firma elevada */
+            margin: 5px auto 0; /* Volvemos a posición normal para que footer quede debajo */
             overflow-x: hidden;
             position: relative;
             z-index: 101;
@@ -265,15 +265,14 @@
 
         footer {
             text-align: center;
-            font-size: 0.65rem;
+            font-size: 0.55rem;
             color: var(--electric-blue);
             letter-spacing: 0.8px;
             font-family: 'Inter', sans-serif;
             font-weight: 800;
             text-shadow: 0 0 5px var(--blue-glow);
             opacity: 1;
-            margin-top: -65px; /* Elevación agresiva de 7cm aprox (65px-70px) */
-            border-top: 1px solid var(--electric-blue);
+            margin-top: 5px; /* Bajamos el texto para que esté debajo de las redes */
             padding: 4px 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.4);
@@ -471,7 +470,7 @@
         </div>
 
         <footer>
-            Juan Carlos - Agente Celestial Designs | +58 424-9039517
+            Juan Carlos - Celestial Designs Agente Celestial +580424-9039517 &copy; 2026
         </footer>
     </div>
 </body>
