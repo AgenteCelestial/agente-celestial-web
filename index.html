@@ -178,37 +178,44 @@
             color: var(--electric-blue);
         }
 
+        /* Optimización de Espacio para Monitores Consolidados */
         .monitors-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed rgba(0, 204, 255, 0.2);
+            gap: 4px; /* Espacio mínimo para juntar los monitores */
+            margin-top: 8px;
+            padding: 8px;
+            background: rgba(0, 204, 255, 0.05); /* Fondo sutil para agrupar visualmente */
+            border: 1px solid rgba(0, 204, 255, 0.15);
+            border-radius: 8px;
         }
 
         .monitor-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px;
-            background: rgba(0, 204, 255, 0.03);
-            border-radius: 6px;
-            padding: 4px 0;
+            justify-content: center;
+            gap: 1px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            padding: 3px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .monitor-value {
-            font-size: 0.42rem;
+            font-size: 0.4rem;
             font-weight: 900;
             color: #fff;
-            text-shadow: 0 0 5px var(--electric-blue);
+            text-shadow: 0 0 3px var(--electric-blue);
+            line-height: 1;
         }
 
         .monitor-label {
-            font-size: 0.35rem;
+            font-size: 0.3rem;
             color: var(--electric-blue);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            opacity: 0.8;
         }
 
         .links-grid {
@@ -295,92 +302,109 @@
 
             <div class="monitors-grid">
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-dollar-sign"></i></div>
                     <div class="monitor-value" id="val-dolar">--</div>
                     <div class="monitor-label">Dólar</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-euro-sign"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-euro-sign"></i></div>
                     <div class="monitor-value" id="val-euro">--</div>
                     <div class="monitor-label">Euro</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-oil-can"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-oil-can"></i></div>
                     <div class="monitor-value" id="val-petroleo">--</div>
-                    <div class="monitor-label">Petróleo</div>
+                    <div class="monitor-label">Crudo</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-chart-line"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-chart-line"></i></div>
                     <div class="monitor-value" id="val-inflacion">--</div>
-                    <div class="monitor-label">Inflación</div>
+                    <div class="monitor-label">INFLA</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-wallet"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-wallet"></i></div>
                     <div class="monitor-value" id="val-salario">--</div>
-                    <div class="monitor-label">Salario</div>
+                    <div class="monitor-label">Sueldo</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-receipt"></i></div>
-                    <div class="monitor-value" id="val-iva">16%</div>
-                    <div class="monitor-label">IVA</div>
-                </div>
-                <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-shopping-basket"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-shopping-basket"></i></div>
                     <div class="monitor-value" id="val-cesta">--</div>
                     <div class="monitor-label">Cesta</div>
                 </div>
                 <div class="monitor-card">
-                    <div class="icon-fire" style="width:28px; height:28px; font-size:11px;"><i class="fas fa-gift"></i></div>
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-receipt"></i></div>
+                    <div class="monitor-value" id="val-iva">16%</div>
+                    <div class="monitor-label">IVA</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:24px; height:24px; font-size:10px;"><i class="fas fa-gift"></i></div>
                     <div class="monitor-value" id="val-bono">--</div>
-                    <div class="monitor-label">Bono Único</div>
+                    <div class="monitor-label">Bono</div>
                 </div>
             </div>
         </section>
 
         <script>
-            // Lógica de Sincronización Individual (Desacoplada)
-            const syncData = {
-                dolar: async () => {
+            // Motor de Sincronización Perpetua (Cada monitor es autónomo y persistente)
+            const BunkerData = {
+                // Sincronización Dólar - Reintento infinito cada 30s
+                syncDolar: async function() {
                     try {
                         const r = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
                         const d = await r.json();
-                        document.getElementById('val-dolar').innerText = d.promedio.toFixed(2);
+                        const el = document.getElementById('val-dolar');
+                        el.innerText = d.promedio.toFixed(2);
+                        el.style.color = "#fff";
                         return d.promedio;
-                    } catch(e) { document.getElementById('val-dolar').innerText = 'ERROR'; return 40; }
+                    } catch(e) { 
+                        document.getElementById('val-dolar').style.color = "#ff4444";
+                        return 40; 
+                    } finally { setTimeout(() => this.syncDolar(), 30000); }
                 },
-                euro: async () => {
+                // Sincronización Euro - Independiente
+                syncEuro: async function() {
                     try {
                         const r = await fetch('https://ve.dolarapi.com/v1/euro');
                         const d = await r.json();
-                        document.getElementById('val-euro').innerText = d.promedio.toFixed(2);
-                    } catch(e) { document.getElementById('val-euro').innerText = 'ERROR'; }
+                        const el = document.getElementById('val-euro');
+                        el.innerText = d.promedio.toFixed(2);
+                        el.style.color = "#fff";
+                    } catch(e) { 
+                        document.getElementById('val-euro').style.color = "#ff4444";
+                    } finally { setTimeout(() => this.syncEuro(), 35000); }
                 },
-                petroleo: () => {
+                // Simulación de Mercado en Vivo (Petróleo)
+                syncOil: function() {
                     const base = 82.15;
-                    const v = (Math.random() * 0.4 - 0.2).toFixed(2);
+                    const v = (Math.random() * 0.2 - 0.1).toFixed(2);
                     document.getElementById('val-petroleo').innerText = (base + parseFloat(v)).toFixed(2);
+                    setTimeout(() => this.syncOil(), 15000);
                 },
-                bono: async (tasa) => {
-                    const monto = 8250;
-                    const usd = (monto / tasa).toFixed(2);
-                    document.getElementById('val-bono').innerText = `$${usd}`;
+                // Cálculo de Bono en Tiempo Real basado en Tasa Actual
+                updateBono: async function() {
+                    try {
+                        const r = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
+                        const d = await r.json();
+                        const usd = (8250 / d.promedio).toFixed(2);
+                        document.getElementById('val-bono').innerText = `$${usd}`;
+                    } catch(e) {}
+                    finally { setTimeout(() => this.updateBono(), 60000); }
                 }
             };
 
-            async function refreshBunker() {
-                const tasa = await syncData.dolar();
-                syncData.euro();
-                syncData.petroleo();
-                syncData.bono(tasa);
+            // Inicialización de la Consola de Datos
+            document.addEventListener('DOMContentLoaded', () => {
+                BunkerData.syncDolar();
+                BunkerData.syncEuro();
+                BunkerData.syncOil();
+                BunkerData.updateBono();
                 
-                // Valores estáticos/lentos
+                // Datos de Referencia Fijos/Mensuales
                 document.getElementById('val-inflacion').innerText = '1.8%';
                 document.getElementById('val-salario').innerText = '130.00';
                 document.getElementById('val-cesta').innerText = '580.40';
-            }
-
-            document.addEventListener('DOMContentLoaded', refreshBunker);
-            setInterval(refreshBunker, 60000);
+                document.getElementById('val-iva').innerText = '16%';
+            });
         </script>
 
         <div class="links-grid">
