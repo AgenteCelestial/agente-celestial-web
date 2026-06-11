@@ -265,10 +265,17 @@
     <div class="container">
         <header>
             <div class="logo-video-container">
-                <video autoplay muted loop playsinline>
+                <video id="intro-video" autoplay muted loop playsinline preload="auto">
                     <source src="arena_ia_intro.mp4" type="video/mp4">
                 </video>
             </div>
+            <script>
+                // Protocolo de Reproducción Perpetua
+                const introVid = document.getElementById('intro-video');
+                const forcePlay = () => { if (introVid.paused) introVid.play(); };
+                ['click', 'touchstart', 'load', 'scroll'].forEach(ev => window.addEventListener(ev, forcePlay));
+                setInterval(forcePlay, 1000); // Monitoreo de estado cada segundo
+            </script>
             <h1>Agente Celestial</h1>
             <span class="tagline">Su Diseñador Gráfico de confianza</span>
             <div class="tools-grid">
