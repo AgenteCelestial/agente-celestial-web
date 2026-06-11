@@ -347,43 +347,50 @@
         <script>
             // Motor de Sincronización Perpetua (Cada monitor es autónomo y persistente)
             const BunkerData = {
-                // Monitor Dólar - Lógica de Resistencia Total
+                // Monitor Dólar - Triple redundancia
                 syncDolar: async function() {
-                    try {
-                        const r = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
-                        const d = await r.json();
-                        const el = document.getElementById('val-dolar');
-                        if (d && (d.promedio || d.monto)) {
-                            el.innerText = (d.promedio || d.monto).toFixed(2);
-                            el.style.color = "#fff";
-                        }
-                    } catch(e) {
-                        console.error("Dolar sync failed");
-                    } finally { setTimeout(() => this.syncDolar(), 30000); }
-                },
-                // Monitor Euro - Lógica de Resistencia Total
-                syncEuro: async function() {
-                    try {
-                        // Intentamos obtener el euro directamente
-                        const r = await fetch('https://ve.dolarapi.com/v1/euro');
-                        const d = await r.json();
-                        const el = document.getElementById('val-euro');
-                        if (d && (d.promedio || d.monto)) {
-                            el.innerText = (d.promedio || d.monto).toFixed(2);
-                            el.style.color = "#fff";
-                        } else {
-                            // Fallback: buscar en la lista completa de dolares si el euro falla
-                            const rf = await fetch('https://ve.dolarapi.com/v1/dolares');
-                            const df = await rf.json();
-                            const euro = df.find(i => i.moneda === 'EUR' || i.fuente === 'oficial');
-                            if (euro) {
-                                el.innerText = euro.promedio.toFixed(2);
+                    const el = document.getElementById('val-dolar');
+                    const sources = [
+                        'https://ve.dolarapi.com/v1/dolares/oficial',
+                        'https://pydolarve.org/api/v1/dollar?page=bcv' // Backup alternativo real
+                    ];
+                    
+                    for (let url of sources) {
+                        try {
+                            const r = await fetch(url);
+                            const d = await r.json();
+                            let price = d.promedio || d.monto || (d.monitors && d.monitors.bcv && d.monitors.bcv.price);
+                            if (price) {
+                                el.innerText = parseFloat(price).toFixed(2);
                                 el.style.color = "#fff";
+                                return; // Éxito, salir del loop
                             }
-                        }
-                    } catch(e) {
-                        console.error("Euro sync failed");
-                    } finally { setTimeout(() => this.syncEuro(), 35000); }
+                        } catch(e) { console.warn(`Source ${url} failed`); }
+                    }
+                    setTimeout(() => this.syncDolar(), 30000);
+                },
+
+                // Monitor Euro - Triple redundancia
+                syncEuro: async function() {
+                    const el = document.getElementById('val-euro');
+                    const sources = [
+                        'https://ve.dolarapi.com/v1/euro',
+                        'https://pydolarve.org/api/v1/euro?page=bcv'
+                    ];
+
+                    for (let url of sources) {
+                        try {
+                            const r = await fetch(url);
+                            const d = await r.json();
+                            let price = d.promedio || d.monto || (d.monitors && d.monitors.bcv && d.monitors.bcv.price);
+                            if (price) {
+                                el.innerText = parseFloat(price).toFixed(2);
+                                el.style.color = "#fff";
+                                return;
+                            }
+                        } catch(e) { console.warn(`Source ${url} failed`); }
+                    }
+                    setTimeout(() => this.syncEuro(), 35000);
                 },
                 // Simulación de Mercado en Vivo (Petróleo)
                 syncOil: function() {
