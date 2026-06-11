@@ -361,15 +361,28 @@
                         return 40; 
                     } finally { setTimeout(() => this.syncDolar(), 30000); }
                 },
-                // Sincronización Euro - Independiente
+                // Sincronización Euro - Corrección de lógica y endpoint
                 syncEuro: async function() {
                     try {
                         const r = await fetch('https://ve.dolarapi.com/v1/euro');
                         const d = await r.json();
                         const el = document.getElementById('val-euro');
-                        el.innerText = d.promedio.toFixed(2);
-                        el.style.color = "#fff";
+                        // Aseguramos que data tenga el campo promedio
+                        if(d && d.promedio) {
+                            el.innerText = d.promedio.toFixed(2);
+                            el.style.color = "#fff";
+                        } else {
+                            // Intento con endpoint alternativo si el primero falla
+                            const r2 = await fetch('https://ve.dolarapi.com/v1/dolares');
+                            const d2 = await r2.json();
+                            const euroData = d2.find(i => i.moneda === 'EUR' || i.fuente === 'euro');
+                            if(euroData) {
+                                el.innerText = euroData.promedio.toFixed(2);
+                                el.style.color = "#fff";
+                            }
+                        }
                     } catch(e) { 
+                        document.getElementById('val-euro').innerText = 'OFFLINE';
                         document.getElementById('val-euro').style.color = "#ff4444";
                     } finally { setTimeout(() => this.syncEuro(), 35000); }
                 },
