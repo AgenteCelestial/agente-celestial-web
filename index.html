@@ -48,38 +48,23 @@
             text-align: center;
         }
 
-        /* Logo con efecto de fuego azul */
-        .logo-placeholder {
-            width: 65px;
-            height: 65px;
-            background: var(--obsidian);
-            border-radius: 50%;
+        /* Video Logo Container */
+        .logo-video-container {
+            width: 80px;
+            height: 80px;
             margin: 0 auto 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
             border: 2px solid var(--electric-blue);
-            box-shadow: 0 0 15px var(--blue-glow), inset 0 0 10px var(--blue-glow);
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--electric-blue);
+            box-shadow: 0 0 20px var(--blue-glow);
+            background: #000;
             position: relative;
         }
 
-        .logo-placeholder::after {
-            content: '';
-            position: absolute;
-            top: -5px; left: -5px; right: -5px; bottom: -5px;
-            border-radius: 50%;
-            border: 1px solid var(--fire-blue);
-            filter: blur(4px);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 0.5; }
+        .logo-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         h1 {
@@ -138,7 +123,6 @@
             color: var(--white);
         }
 
-        /* Icono Estilo Fuego Azul */
         .icon-fire {
             width: 50px;
             height: 50px;
@@ -171,7 +155,6 @@
             margin: 10px auto 0;
         }
 
-        /* Botones de Redes Sociales con efecto Glow de fuego */
         .btn-fire {
             width: 40px;
             height: 40px;
@@ -206,7 +189,11 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo-placeholder">AC</div>
+            <div class="logo-video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="arena_ia_intro.mp4" type="video/mp4">
+                </video>
+            </div>
             <h1>Agente Celestial</h1>
             <span class="tagline">Su Diseñador Gráfico de confianza</span>
         </header>
