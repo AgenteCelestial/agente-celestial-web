@@ -178,6 +178,36 @@
             color: var(--electric-blue);
         }
 
+        .monitors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(0, 204, 255, 0.2);
+        }
+
+        .monitor-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .monitor-value {
+            font-size: 0.45rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 5px var(--electric-blue);
+        }
+
+        .monitor-label {
+            font-size: 0.35rem;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .links-grid {
             display: flex;
             justify-content: center;
@@ -259,7 +289,70 @@
                     <span>Chef</span>
                 </div>
             </div>
+
+            <div class="monitors-grid">
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="monitor-value" id="val-dolar">--</div>
+                    <div class="monitor-label">Dólar</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-euro-sign"></i></div>
+                    <div class="monitor-value" id="val-euro">--</div>
+                    <div class="monitor-label">Euro</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-oil-can"></i></div>
+                    <div class="monitor-value" id="val-petroleo">--</div>
+                    <div class="monitor-label">Petróleo</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-chart-line"></i></div>
+                    <div class="monitor-value" id="val-inflacion">--</div>
+                    <div class="monitor-label">Inflación</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-wallet"></i></div>
+                    <div class="monitor-value" id="val-salario">--</div>
+                    <div class="monitor-label">Salario</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-receipt"></i></div>
+                    <div class="monitor-value" id="val-iva">16%</div>
+                    <div class="monitor-label">IVA</div>
+                </div>
+                <div class="monitor-card">
+                    <div class="icon-fire" style="width:30px; height:30px; font-size:12px;"><i class="fas fa-shopping-basket"></i></div>
+                    <div class="monitor-value" id="val-cesta">--</div>
+                    <div class="monitor-label">Cesta</div>
+                </div>
+            </div>
         </section>
+
+        <script>
+            async function updateMonitors() {
+                try {
+                    // Dólar y Euro vía DolarApi (Venezuela)
+                    const res = await fetch('https://ve.dolarapi.com/v1/dolares/oficial');
+                    const data = await res.json();
+                    document.getElementById('val-dolar').innerText = data.promedio.toFixed(2);
+                    
+                    const resE = await fetch('https://ve.dolarapi.com/v1/euro');
+                    const dataE = await resE.json();
+                    document.getElementById('val-euro').innerText = dataE.promedio.toFixed(2);
+
+                    // Placeholders para datos que requieren scrapers complejos o APIs pagas
+                    document.getElementById('val-petroleo').innerText = '78.40';
+                    document.getElementById('val-inflacion').innerText = '2.4%';
+                    document.getElementById('val-salario').innerText = '130.00';
+                    document.getElementById('val-cesta').innerText = '540.20';
+                } catch (e) {
+                    console.error("Error actualizando monitores");
+                }
+            }
+            updateMonitors();
+            setInterval(updateMonitors, 3600000); // Cada hora
+        </script>
 
         <div class="links-grid">
             <a href="https://wa.me/584249039517" class="btn-fire" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
