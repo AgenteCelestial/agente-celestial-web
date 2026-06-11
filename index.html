@@ -97,6 +97,36 @@
             padding: 15px;
             box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
             backdrop-filter: blur(5px);
+            margin-bottom: 10px;
+        }
+
+        .tools-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 5px 0 15px;
+        }
+
+        .tool-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            background: #000;
+            border: 1px solid var(--electric-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 8px var(--blue-glow);
+            font-size: 14px;
+            color: var(--white);
+            position: relative;
+        }
+
+        .tool-icon img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 2px var(--electric-blue));
         }
 
         h2 {
@@ -196,6 +226,12 @@
             </div>
             <h1>Agente Celestial</h1>
             <span class="tagline">Su Diseñador Gráfico de confianza</span>
+            <div class="tools-grid">
+                <div class="tool-icon" title="Photoshop"><i class="fas fa-file-ps"></i></div>
+                <div class="tool-icon" title="FL Studio"><i class="fas fa-waveform"></i></div>
+                <div class="tool-icon" title="Gemini AI"><i class="fas fa-brain"></i></div>
+                <div class="tool-icon" title="Arena IA"><i class="fas fa-bolt"></i></div>
+            </div>
         </header>
 
         <section class="bunker-section">
