@@ -106,18 +106,14 @@
             background: rgba(10, 15, 25, 0.7);
             border: 1px solid rgba(0, 204, 255, 0.3);
             border-radius: 12px;
-            padding: 0.5vh 8px; /* Reducción de padding vertical */
+            padding: 4px 8px; 
             box-shadow: 0 0 15px rgba(0, 204, 255, 0.1);
             backdrop-filter: blur(8px);
-            margin: 0.2vh auto; /* Margen mínimo */
-            width: calc(95% - 1.5cm); /* Reducción de márgenes laterales para que los monitores tengan más ancho */
-            padding-top: 0; 
-            padding-bottom: 0; 
-            margin-top: 0.5vh; 
-            margin-bottom: 0.5vh; 
+            margin: 0.2vh auto; 
+            width: calc(95% - 1.5cm); 
             max-width: 350px;
-            flex-shrink: 1;
-            overflow: visible; /* Cambiado a visible para que no se corten los monitores */
+            flex-shrink: 0; /* Evita que la sección se colapse */
+            overflow: visible;
         }
 
         .tools-grid {
@@ -220,8 +216,7 @@
             background: rgba(0, 204, 255, 0.05);
             border: 1px solid rgba(0, 204, 255, 0.15);
             border-radius: 8px;
-            max-height: 25vh;
-            overflow-y: auto;
+            overflow: visible; /* Eliminado el scroll interno que causaba el fallo */
         }
 
         .monitor-card {
