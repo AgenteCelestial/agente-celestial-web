@@ -112,11 +112,11 @@
             width: calc(95% - 1.5cm); /* Reducción de márgenes laterales para que los monitores tengan más ancho */
             padding-top: 0; 
             padding-bottom: 0; 
-            margin-top: 0.5vh; 
-            margin-bottom: 0.5vh; 
+            margin-top: calc(0.2vh - 0.5cm); 
+            margin-bottom: calc(0.2vh + 0.5cm); 
             max-width: 350px;
             flex-shrink: 1;
-            overflow: visible; /* Cambiado a visible para que no se corten los monitores */
+            overflow: hidden;
         }
 
         .tools-grid {
@@ -128,7 +128,16 @@
 
         /* Franja de Exclusividad Ajustada */
         .exclusive-banner {
-            display: none; /* Eliminado por orden */
+            width: calc(100% - 2cm); 
+            height: 12vh; /* Dinámico */
+            max-height: 100px;
+            margin: 0.5vh auto;
+            border: 1px solid rgba(0, 204, 255, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            flex-shrink: 0;
         }
 
         .exclusive-banner img {
@@ -342,6 +351,7 @@
 </head>
 <body>
     <div class="pc-overlay">
+        <img src="https://i.ibb.co/Y40x89pJ/Gemini-Generated-Image-4f4z864f4z864f4z.jpg" alt="Acceso Restringido">
         <h2>[ Acceso Restringido ]</h2>
         <p>Este búnker digital ha sido optimizado para visualización táctica en dispositivos móviles. Por favor, acceda desde su smartphone para una experiencia completa.</p>
     </div>
