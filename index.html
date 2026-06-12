@@ -58,10 +58,10 @@
         }
 
         .logo-video-container {
-            width: 15vh; /* Dinámico */
-            height: 15vh;
-            max-width: 110px;
-            max-height: 110px;
+            width: 12vh; /* Reducido para ganar espacio vertical */
+            height: 12vh;
+            max-width: 90px;
+            max-height: 90px;
             margin: 0 auto 2px;
             border-radius: 8px;
             overflow: hidden;
@@ -79,8 +79,8 @@
 
         h1 {
             color: var(--electric-blue);
-            font-size: 3vh; /* Dinámico */
-            max-size: 1.6rem;
+            font-size: 2.5vh; /* Reducido para compactar */
+            max-size: 1.4rem;
             text-transform: uppercase;
             font-weight: 900;
             text-shadow: 0 0 12px var(--blue-glow);
@@ -105,15 +105,15 @@
             background: rgba(10, 15, 25, 0.7);
             border: 1px solid rgba(0, 204, 255, 0.3);
             border-radius: 12px;
-            padding: 1vh 8px; /* Dinámico */
+            padding: 0.5vh 8px; /* Reducción de padding vertical */
             box-shadow: 0 0 15px rgba(0, 204, 255, 0.1);
             backdrop-filter: blur(8px);
-            margin: 0.5vh auto;
-            width: calc(95% - 2cm); /* Quita 1cm de cada lado (izq/der) */
+            margin: 0.2vh auto; /* Margen mínimo */
+            width: calc(95% - 1.5cm); /* Reducción de márgenes laterales para que los monitores tengan más ancho */
             padding-top: 0; 
             padding-bottom: 0; 
-            margin-top: calc(0.5vh - 1cm); /* Bajamos 1cm volviendo al estado anterior (-1cm desde origen) */
-            margin-bottom: calc(0.5vh + 1cm); 
+            margin-top: calc(0.2vh - 0.5cm); 
+            margin-bottom: calc(0.2vh + 0.5cm); 
             max-width: 350px;
             flex-shrink: 1;
             overflow: hidden;
