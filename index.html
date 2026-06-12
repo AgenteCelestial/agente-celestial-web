@@ -112,11 +112,11 @@
             width: calc(95% - 1.5cm); /* Reducción de márgenes laterales para que los monitores tengan más ancho */
             padding-top: 0; 
             padding-bottom: 0; 
-            margin-top: calc(0.2vh + 3cm); /* Bajado 3cm según orden, manteniendo base 0.2vh */
-            margin-bottom: calc(0.2vh + 0.5cm); 
+            margin-top: 0.5vh; 
+            margin-bottom: 0.5vh; 
             max-width: 350px;
             flex-shrink: 1;
-            overflow: hidden;
+            overflow: visible; /* Cambiado a visible para que no se corten los monitores */
         }
 
         .tools-grid {
@@ -128,16 +128,7 @@
 
         /* Franja de Exclusividad Ajustada */
         .exclusive-banner {
-            width: calc(100% - 2cm); 
-            height: 12vh; /* Dinámico */
-            max-height: 100px;
-            margin: 0.5vh auto;
-            border: 1px solid rgba(0, 204, 255, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            background: #000;
-            flex-shrink: 0;
+            display: none; /* Eliminado por orden */
         }
 
         .exclusive-banner img {
