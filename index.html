@@ -234,7 +234,7 @@
         }
 
         .monitor-value {
-            font-size: 0.4rem;
+            font-size: 0.5rem; /* Aumentado de 0.4rem para mayor legibilidad */
             font-weight: 900;
             color: #fff;
             text-shadow: 0 0 3px var(--electric-blue);
@@ -475,7 +475,7 @@
                             const d = await r.json();
                             let price = d.promedio || d.monto || (d.monitors && d.monitors.bcv && d.monitors.bcv.price);
                             if (price) {
-                                el.innerText = parseFloat(price).toFixed(2);
+                                el.innerText = '€' + parseFloat(price).toFixed(2);
                                 el.style.color = "#fff";
                                 return;
                             }
@@ -510,7 +510,7 @@
                 BunkerData.updateBono();
                 document.getElementById('val-inflacion').innerText = '1.8%';
                 document.getElementById('val-salario').innerText = '130.00';
-                document.getElementById('val-cesta').innerText = '580.40';
+                document.getElementById('val-cesta').innerText = '$730.59';
                 document.getElementById('val-iva').innerText = '16%';
                 
                 const introVid = document.getElementById('intro-video');
