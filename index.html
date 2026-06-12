@@ -112,7 +112,7 @@
             width: calc(95% - 2cm); /* Quita 1cm de cada lado (izq/der) */
             padding-top: 0; /* Eliminamos el padding extra para reducir 1cm arriba */
             padding-bottom: 0; /* Eliminamos el padding extra para reducir 1cm abajo */
-            margin-top: calc(0.5vh + 1cm); /* Empujamos desde afuera para simular el recorte visual */
+            margin-top: calc(0.5vh - 1cm); /* Elevamos el bloque */
             margin-bottom: calc(0.5vh + 1cm);
             max-width: 350px;
             flex-shrink: 1;
@@ -256,7 +256,7 @@
             flex-wrap: nowrap;
             width: 100%;
             max-width: 380px;
-            margin: 5px auto 0;
+            margin: 5px auto 1cm; /* Elevamos subiendo 1cm desde abajo */
             overflow-x: hidden;
         }
 
