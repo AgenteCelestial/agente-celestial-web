@@ -110,8 +110,10 @@
             backdrop-filter: blur(8px);
             margin: 0.5vh auto;
             width: calc(95% - 2cm); /* Quita 1cm de cada lado (izq/der) */
-            padding-top: calc(1vh + 0.5cm); /* Ajuste aproximado para simular 1cm menos arriba/abajo */
-            padding-bottom: calc(1vh + 0.5cm);
+            padding-top: 0; /* Eliminamos el padding extra para reducir 1cm arriba */
+            padding-bottom: 0; /* Eliminamos el padding extra para reducir 1cm abajo */
+            margin-top: calc(0.5vh + 1cm); /* Empujamos desde afuera para simular el recorte visual */
+            margin-bottom: calc(0.5vh + 1cm);
             max-width: 350px;
             flex-shrink: 1;
             overflow: hidden;
