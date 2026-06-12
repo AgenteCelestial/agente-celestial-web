@@ -1,5 +1,4 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>AC HUD SCALE</title><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><style>:root{--c:#00e5ff;--r:#ff3131;--g:rgba(0,229,255,0.3)}*{margin:0;padding:0;box-sizing:border-box;font-family:Rajdhani,sans-serif;text-transform:uppercase}html,body{background:#000;height:100vh;width:100vw;overflow:hidden;position:fixed}#bg{position:fixed;top:0;left:0;width:100%;height:100%;background:url("https://i.ibb.co/0VDrgcH8/Gemini-Generated-Image-ayr8z4ayr8z4ayr8.png") center/cover no-repeat;z-index:-2;filter:brightness(0.3)}.ov{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:-1}
-/* EL CONTENEDOR QUE ENCOJE TODO JUNTO */
 .viewport-wrapper {
     height: 100vh;
     width: 100vw;
@@ -14,8 +13,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    /* Reduccion proporcional para que todo quepa en una pantalla movil estandar */
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(-40px); /* SUBIDA DE APROXIMADAMENTE 2 CM */
     transform-origin: center;
 }
 header{text-align:center;width:100%}.v-box{width:100%;height:160px;border:1.5px solid var(--c);box-shadow:0 0 10px var(--g);margin-bottom:5px;border-radius:12px;overflow:hidden;background:#000}#iv{width:100%;height:100%;object-fit:cover}h1{color:var(--c);font-size:1.3rem;font-weight:700;letter-spacing:2px;text-shadow:0 0 8px var(--c)}
