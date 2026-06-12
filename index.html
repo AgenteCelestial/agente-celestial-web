@@ -109,7 +109,9 @@
             box-shadow: 0 0 15px rgba(0, 204, 255, 0.1);
             backdrop-filter: blur(8px);
             margin: 0.5vh auto;
-            width: 95%;
+            width: calc(95% - 2cm); /* Quita 1cm de cada lado (izq/der) */
+            padding-top: calc(1vh + 0.5cm); /* Ajuste aproximado para simular 1cm menos arriba/abajo */
+            padding-bottom: calc(1vh + 0.5cm);
             max-width: 350px;
             flex-shrink: 1;
             overflow: hidden;
