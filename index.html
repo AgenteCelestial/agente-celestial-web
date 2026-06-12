@@ -110,10 +110,10 @@
             backdrop-filter: blur(8px);
             margin: 0.5vh auto;
             width: calc(95% - 2cm); /* Quita 1cm de cada lado (izq/der) */
-            padding-top: 0; /* Eliminamos el padding extra para reducir 1cm arriba */
-            padding-bottom: 0; /* Eliminamos el padding extra para reducir 1cm abajo */
-            margin-top: calc(0.5vh - 1cm); /* Elevamos el bloque */
-            margin-bottom: calc(0.5vh + 1cm);
+            padding-top: 0; 
+            padding-bottom: 0; 
+            margin-top: calc(0.5vh - 2cm); /* Subimos otro cm (total -2cm desde el origen) */
+            margin-bottom: calc(0.5vh + 2cm); 
             max-width: 350px;
             flex-shrink: 1;
             overflow: hidden;
@@ -256,7 +256,7 @@
             flex-wrap: nowrap;
             width: 100%;
             max-width: 380px;
-            margin: 5px auto 1cm; /* Elevamos subiendo 1cm desde abajo */
+            margin: 5px auto 2cm; /* Subimos otro cm (total 2cm de margen inferior) */
             overflow-x: hidden;
         }
 
